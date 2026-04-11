@@ -1,0 +1,6 @@
+export { AboutHeroSection } from './AboutHeroSection'
+export { ProfileSection } from './ProfileSection'
+export { PhilosophySection } from './PhilosophySection'
+export { ImpactSection } from './ImpactSection'
+export { ExperienceSection } from './ExperienceSection'
+export { AboutCTA } from './AboutCTA'
