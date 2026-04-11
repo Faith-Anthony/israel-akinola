@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { blogPosts } from '../../data/blogData'
-import { Layout } from '../layout/Layout'
+
 import { FaArrowLeft } from 'react-icons/fa6'
 
 export const BlogDetailsPage: React.FC = () => {
