@@ -1,43 +1,85 @@
 # Israel Akinola - Digital Leadership Portfolio
 
-A modern, production-ready React + Vite portfolio website showcasing digital leadership and strategic thinking.
+A production-ready React + Vite portfolio website showcasing digital leadership and strategic thinking through a modern, editorial-focused design.
 
 ## Tech Stack
 
 - **Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
+- **Build Tool**: Vite 5
 - **Styling**: Tailwind CSS 3
 - **Routing**: React Router DOM v6
 - **Fonts**: Newsreader (Display) & Manrope (Body)
-- **Icons**: Material Symbols
-- **Development**: ESLint, TypeScript
+- **Icons**: React Icons
+- **Linting**: ESLint
+
+## Prerequisites
+
+- Node.js 18+ and npm 9+
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linter
+npm run lint
+```
 
 ## Project Structure
 
 ```
 src/
 ├── components/
-│   └── layout/          # Layout components (Navbar, Footer, Layout wrapper)
-├── pages/               # Page components (HomePage, AboutPage, etc.)
+│   ├── layout/              # Navbar, Footer, Layout wrapper
+│   ├── homepage/            # Hero, CTA, preview sections
+│   ├── about/               # About page components
+│   ├── services/            # Services page components
+│   ├── work/                # Work/Portfolio page components
+│   ├── blog/                # Blog page components
+│   ├── contact/             # Contact page components
+│   ├── caseStudies/         # Case study details
+│   └── common/              # Shared components
+├── pages/                   # Page components (routes)
+├── data/                    # Data files (blog data, etc.)
 ├── assets/
-│   ├── images/          # Image assets
-│   └── icons/           # Icon assets
-├── styles/              # Global CSS and utilities
-├── App.tsx              # Main application component with routing
-└── main.tsx             # Entry point
-
+│   ├── images/              # Image files
+│   └── icons/               # Icon files
+├── styles/                  # Global CSS with Tailwind
+├── App.tsx                  # Main app with routing
+└── main.tsx                 # React entry point
 ```
 
-## Prerequisites
+## Key Features
 
-- Node.js 18+ and npm 9+
+- ✅ Fully responsive design
+- ✅ Dark mode (default)
+- ✅ Code splitting via React Router
+- ✅ TypeScript for type safety
+- ✅ Performance optimized build
+- ✅ ESLint configured
+- ✅ Production-ready
 
-## Installation
+## Development Notes
 
-```bash
-# Install dependencies
-npm install
-```
+- All components use TypeScript
+- Styling is done with Tailwind CSS utility classes
+- Color system defined in `tailwind.config.ts`
+- Custom fonts imported via CSS
+- Images are optimized in build
+
+## Building & Deployment
+
+The production build outputs to the `dist/` folder and is ready to deploy to any static hosting service (Vercel, Netlify, GitHub Pages, etc.).
 
 ## Development
 
