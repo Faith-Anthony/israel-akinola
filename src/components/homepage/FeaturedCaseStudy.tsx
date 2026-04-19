@@ -5,19 +5,19 @@ import golearImage from '../../assets/images/Golearn.jpg'
 
 export const FeaturedCaseStudy: React.FC = () => {
   return (
-    <section className="py-20 md:py-32 bg-surface-container">
+    <section className="bg-surface-dim py-12 sm:py-16">
       <div className="container-max px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: '-100px' }}
-          className="text-center mb-12"
+          className="mb-8 text-center"
         >
-          <p className="text-sm uppercase tracking-widest text-primary-container mb-4 font-semibold">
+          <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.35em] text-on-surface-variant">
             Featured Work
           </p>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-on-surface">
+          <h2 className="font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-on-surface sm:text-5xl">
             Golearn
           </h2>
         </motion.div>
@@ -28,20 +28,19 @@ export const FeaturedCaseStudy: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: '-100px' }}
-          whileHover={{ y: -8 }}
-          className="max-w-3xl mx-auto"
+          className="mx-auto max-w-4xl"
         >
-          <div className="bg-surface border border-surface-container-high rounded-lg overflow-hidden shadow-lg transition-smooth hover:shadow-2xl hover:border-primary-container/50 group">
+          <div className="group overflow-hidden rounded-[1.75rem] bg-surface-container/20 ring-1 ring-white/5 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.6)] transition-all duration-300 hover:ring-white/10 sm:rounded-[2rem]">
             {/* Case Study Image */}
             <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4 }}
-              className="h-64 md:h-80 relative overflow-hidden"
+              className="relative h-48 overflow-hidden sm:h-64 md:h-72"
             >
-              <img
+              <motion.img
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
                 src={golearImage}
                 alt="Golearn Case Study"
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
                 loading="lazy"
                 decoding="async"
               />
@@ -52,13 +51,13 @@ export const FeaturedCaseStudy: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-8 md:p-12"
+              className="p-6 sm:p-8 md:p-10"
             >
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-xs uppercase tracking-widest text-primary-container mb-3 font-semibold"
+                className="mb-4 text-[10px] font-semibold uppercase tracking-[0.25em] text-on-surface-variant"
               >
                 Case Study
               </motion.p>
@@ -67,7 +66,7 @@ export const FeaturedCaseStudy: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="text-3xl md:text-4xl font-serif font-bold italic text-on-surface mb-4"
+                className="mb-5 font-display text-2xl font-semibold uppercase tracking-tight text-on-surface sm:text-3xl md:text-4xl"
               >
                 Featured Impact: Golearn
               </motion.h3>
@@ -76,7 +75,7 @@ export const FeaturedCaseStudy: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
-                className="text-lg text-on-surface-variant mb-6 leading-relaxed"
+                className="mb-8 max-w-2xl text-sm leading-relaxed text-on-surface-variant sm:text-base"
               >
                 Golearn is a leading African EdTech social enterprise dedicated to eradicating poverty and cybercrime by providing accessible world-class technical education.
               </motion.p>
@@ -85,43 +84,31 @@ export const FeaturedCaseStudy: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-                className="grid grid-cols-2 gap-4 mb-8"
+                className="mb-10 grid grid-cols-2 gap-y-4 gap-x-6 sm:grid-cols-4"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-primary-container material-symbols-outlined">
-                    check_circle
-                  </span>
-                  <span className="text-sm font-semibold text-on-surface">Curriculum Design</span>
+                <div className="flex items-center gap-2 border-l-2 border-on-surface/10 pl-3">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-on-surface">Curriculum</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-primary-container material-symbols-outlined">
-                    check_circle
-                  </span>
-                  <span className="text-sm font-semibold text-on-surface">Platform Strategy</span>
+                <div className="flex items-center gap-2 border-l-2 border-on-surface/10 pl-3">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-on-surface">Strategy</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-primary-container material-symbols-outlined">
-                    check_circle
-                  </span>
-                  <span className="text-sm font-semibold text-on-surface">Community Growth</span>
+                <div className="flex items-center gap-2 border-l-2 border-on-surface/10 pl-3">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-on-surface">Community</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-primary-container material-symbols-outlined">
-                    check_circle
-                  </span>
-                  <span className="text-sm font-semibold text-on-surface">Execution Roadmap</span>
+                <div className="flex items-center gap-2 border-l-2 border-on-surface/10 pl-3">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-on-surface">Roadmap</span>
                 </div>
               </motion.div>
 
-              <Link to="/work">
-                <motion.div
-                  whileHover={{ scale: 1.02, gap: '12px' }}
+              <Link to="/work" data-cursor-hover>
+                <motion.span
+                  whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center px-8 py-3 bg-primary-container text-on-primary font-semibold rounded-lg transition-smooth cursor-pointer gap-2"
+                  className="inline-flex items-center justify-center gap-3 rounded-full bg-primary-container px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-on-primary transition-transform"
                 >
                   View Case Study
-                  <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </motion.div>
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </motion.span>
               </Link>
             </motion.div>
           </div>
@@ -130,3 +117,4 @@ export const FeaturedCaseStudy: React.FC = () => {
     </section>
   )
 }
+

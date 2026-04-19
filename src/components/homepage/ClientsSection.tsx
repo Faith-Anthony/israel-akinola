@@ -29,21 +29,25 @@ export const ClientsSection: React.FC = () => {
   const infiniteClients = [...clients, ...clients, ...clients]
 
   return (
-    <section className="py-16 md:py-24 bg-surface">
-      <div className="container-max px-4 sm:px-6 lg:px-8 mb-12">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
+    <section className="overflow-hidden bg-surface-container-lowest py-8 sm:py-10 border-y border-white/5">
+      <div className="container-max mb-6 px-4 sm:px-6 lg:px-8">
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: '-100px' }}
-          className="text-3xl md:text-4xl font-serif font-bold text-on-surface"
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.35em] text-on-surface-variant"
         >
-          Clients <span className="text-primary-container">.</span>
-        </motion.h2>
+          Trusted By
+        </motion.p>
       </div>
 
       {/* Scrolling logos container */}
       <div className="relative w-full overflow-hidden">
+        {/* Gradient fades for edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-surface to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-surface to-transparent sm:w-32" />
+
         <motion.div
           className="flex gap-12 md:gap-16"
           animate={{ x: [0, -2000] }}
@@ -57,13 +61,13 @@ export const ClientsSection: React.FC = () => {
           {infiniteClients.map((client, index) => (
             <motion.div
               key={index}
-              className="flex-shrink-0 h-20 md:h-24 flex items-center justify-center"
+              className="flex h-16 w-32 shrink-0 items-center justify-center sm:h-20 sm:w-40"
               whileHover={{ scale: 1.05 }}
             >
               <img
                 src={client.logo}
                 alt={client.name}
-                className="h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                className="h-full object-contain opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
               />
             </motion.div>
           ))}
@@ -72,3 +76,4 @@ export const ClientsSection: React.FC = () => {
     </section>
   )
 }
+

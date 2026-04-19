@@ -10,7 +10,7 @@ import {
 
 export const AboutPage: React.FC = () => {
   return (
-    <div>
+    <div className="bg-surface text-on-surface">
       <AboutHeroSection />
       <ProfileSection />
       <PhilosophySection />

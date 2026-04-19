@@ -4,7 +4,7 @@ import { ContactCardsGrid } from '../components/contact/ContactCardsGrid'
 
 export const ContactPage: React.FC = () => {
   return (
-    <div>
+    <div className="bg-surface text-on-surface">
       <ContactHeroSection />
       <ContactCardsGrid />
     </div>

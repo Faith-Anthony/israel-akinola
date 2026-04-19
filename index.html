@@ -1,14 +1,19 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="dark" style="background-color:#09090b;color:#fafafa">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <title>Israel Akinola</title>
+    <style>
+      /* Guaranteed dark baseline — prevents any flash of light content */
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body, #root { background-color: #09090b; color: #fafafa; min-height: 100%; }
+    </style>
   </head>
-  <body class="bg-surface text-on-surface">
+  <body style="background-color:#09090b;color:#fafafa" class="bg-surface text-on-surface selection:bg-primary-container/25 selection:text-on-surface">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

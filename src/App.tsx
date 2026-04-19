@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/layout'
+import { CustomCursor } from './components/common/CustomCursor'
 import { SplashScreen } from './components/common/SplashScreen'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
@@ -31,22 +32,25 @@ function App() {
   }
 
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/work" element={<WorkPage />} />
-          <Route path="/work/golearn" element={<GoLearnPage />} />
-          <Route path="/work/tapperx" element={<TapperXPage />} />
-          <Route path="/work/ntpic" element={<NTPICPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogDetailsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <>
+      <CustomCursor />
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/work/golearn" element={<GoLearnPage />} />
+            <Route path="/work/tapperx" element={<TapperXPage />} />
+            <Route path="/work/ntpic" element={<NTPICPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogDetailsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </>
   )
 }
 

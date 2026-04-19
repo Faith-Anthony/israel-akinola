@@ -7,8 +7,24 @@
     @apply scroll-smooth;
   }
 
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active input,
+  html.custom-cursor-active textarea,
+  html.custom-cursor-active select,
+  html.custom-cursor-active [role='button'],
+  html.custom-cursor-active [data-cursor-hover] {
+    cursor: none !important;
+  }
+
   body {
-    @apply bg-surface text-on-surface font-sans;
+    @apply min-h-screen bg-surface font-sans text-on-surface antialiased;
+    background-image:
+      radial-gradient(ellipse 100% 80% at 50% -30%, rgba(217, 119, 6, 0.06), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 20%, rgba(99, 102, 241, 0.03), transparent 50%);
+    background-attachment: fixed;
   }
 
   /* Print optimizations */
@@ -54,5 +70,10 @@
   /* Smooth transitions */
   .transition-smooth {
     @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Dark glassmorphism panel */
+  .glass-panel {
+    @apply border border-white/[0.06] bg-surface-container/40 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.4)] backdrop-blur-xl;
   }
 }
