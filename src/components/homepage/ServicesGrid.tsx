@@ -80,7 +80,7 @@ export const ServicesGrid: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="bg-surface-container-lowest py-16 sm:py-20">
+    <section className="bg-surface-container-lowest py-8 sm:py-20">
       <div className="container-max px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

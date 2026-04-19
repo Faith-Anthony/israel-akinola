@@ -5,9 +5,9 @@ import profileImage from '../../assets/images/profile2.JPG'
 
 export const AboutPreview: React.FC = () => {
   return (
-    <section className="bg-surface-dim py-12 sm:py-16">
+    <section className="bg-surface-dim py-6 sm:py-16">
       <div className="container-max px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-stretch gap-0 overflow-hidden rounded-[2rem] border border-white/[0.06] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.6)] md:grid-cols-2">
+        <div className="grid grid-cols-1 items-stretch gap-0 overflow-hidden rounded-3xl border border-white/[0.06] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.6)] md:grid-cols-2 md:rounded-[2rem]">
           
           {/* Profile Image — full height, no crop */}
           <motion.div
@@ -15,7 +15,7 @@ export const AboutPreview: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, margin: '-100px' }}
-            className="group relative min-h-[24rem] overflow-hidden md:min-h-[32rem]"
+            className="group relative min-h-[20rem] overflow-hidden md:min-h-[32rem]"
           >
             <img
               src={profileImage}
@@ -34,7 +34,7 @@ export const AboutPreview: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, margin: '-100px' }}
-            className="flex flex-col justify-center bg-surface-container-high/40 px-8 py-10 backdrop-blur-sm sm:px-12"
+            className="flex flex-col justify-center bg-surface-container-high/40 px-6 py-8 backdrop-blur-sm sm:px-12 sm:py-10"
           >
             <motion.p
               initial={{ opacity: 0, y: 10 }}

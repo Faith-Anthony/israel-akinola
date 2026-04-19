@@ -16,12 +16,12 @@ export const HeroSection: React.FC = () => {
   const [active, setActive] = useState(4)
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-[4rem] sm:pt-[4.5rem]">
+    <section className="relative overflow-hidden pt-[4rem] sm:min-h-screen sm:pt-[4.5rem]">
       {/* Ambient background */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(217,119,6,0.08),transparent_50%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_60%,rgba(99,102,241,0.04),transparent_45%)]" />
 
-      <div className="container-max relative z-10 px-4 pb-4 sm:px-6 lg:px-8 lg:pb-8">
+      <div className="container-max relative z-10 px-4 pb-0 sm:px-6 sm:pb-4 lg:px-8 lg:pb-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

@@ -5,7 +5,7 @@ import golearImage from '../../assets/images/Golearn.jpg'
 
 export const FeaturedCaseStudy: React.FC = () => {
   return (
-    <section className="bg-surface-dim py-12 sm:py-16">
+    <section className="bg-surface-dim py-8 sm:py-16">
       <div className="container-max px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

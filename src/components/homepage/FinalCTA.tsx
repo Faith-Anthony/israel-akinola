@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const FinalCTA: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-surface py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-surface py-16 sm:py-32">
       {/* Decorative background element */}
       <motion.div
         animate={{ rotate: 360, scale: [1, 1.1, 1] }}
