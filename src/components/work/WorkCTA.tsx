@@ -31,7 +31,7 @@ export const WorkCTA: React.FC = () => {
                 <motion.span
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-3 rounded-full bg-on-surface px-10 py-5 text-[11px] font-bold uppercase tracking-[0.25em] text-surface transition-all hover:bg-primary-container hover:shadow-[0_20px_40px_-10px_rgba(217,119,6,0.3)] shadow-lg"
+                  className="inline-flex items-center gap-3 rounded-full bg-on-surface px-10 py-5 text-[11px] font-bold uppercase tracking-[0.25em] text-surface transition-all hover:bg-primary-container hover:shadow-xl shadow-lg"
                 >
                   Start a Conversation
                   <span className="material-symbols-outlined text-[18px]">arrow_forward</span>

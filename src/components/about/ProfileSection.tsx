@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import ivyLogo from '../../assets/images/IVY.jpg'
 import squareLogo from '../../assets/images/logos/square-logo.png'
+import collabImage from '../../assets/images/WhatsApp Image 2026-04-20 at 11.44.18.jpeg'
 
 const slideVariants = {
   hidden: { opacity: 0, x: -30 },
@@ -41,24 +42,42 @@ export const ProfileSection: React.FC = () => {
   return (
     <section className="py-12 md:py-20 bg-surface overflow-hidden">
       <div className="container-max px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto space-y-12 md:space-y-20">
+        <div className="max-w-6xl mx-auto space-y-12 md:space-y-24">
           
-          {/* Chapter 1: The Identity (Slides) */}
-          <div className="space-y-2 text-left">
-            {introSlides.map((text, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-50px' }}
-                variants={slideVariants}
-              >
-                <h2 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-on-surface leading-tight">
-                  {text}
-                </h2>
-              </motion.div>
-            ))}
+          {/* Chapter 1: The Identity (Text + Visual Side-by-Side) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div className="space-y-4 text-left">
+              {introSlides.map((text, i) => (
+                <motion.div
+                  key={i}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: '-50px' }}
+                  variants={slideVariants}
+                >
+                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold text-on-surface leading-tight">
+                    {text}
+                  </h2>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Strategic Collaboration Visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, margin: '-100px' }}
+              className="relative overflow-hidden rounded-[2rem] glass-panel p-2 md:p-3 shadow-none border-white/10"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-container/10 via-transparent to-secondary-container/10 opacity-30" />
+              <img
+                src={collabImage}
+                alt="Strategic Brainstorming"
+                className="w-full h-auto rounded-[1.5rem] object-cover relative z-10"
+              />
+            </motion.div>
           </div>
 
           {/* Chapter 2: IVY (Untouched structure) */}
@@ -140,7 +159,7 @@ export const ProfileSection: React.FC = () => {
                 viewport={{ once: true, margin: '-50px' }}
                 variants={slideVariants}
               >
-                <p className="text-base sm:text-xl md:text-3xl text-on-surface leading-relaxed font-serif">
+                <p className="text-sm sm:text-lg md:text-2xl text-on-surface leading-relaxed font-serif text-left">
                   {text}
                 </p>
               </motion.div>

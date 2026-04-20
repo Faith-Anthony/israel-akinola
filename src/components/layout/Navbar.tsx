@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
         <motion.nav
           className={`mx-auto overflow-hidden transition-all duration-300 ease-out ${
             scrolled
-              ? 'container-max rounded-2xl border border-on-surface/10 bg-surface shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)]'
+              ? 'container-max rounded-2xl border border-on-surface/10 bg-surface shadow-[0_8px_24px_-12px_rgba(0,0,0,0.15)]'
               : 'w-full rounded-none border-b border-on-surface/5 bg-app-background shadow-none'
           }`}
         >

@@ -87,7 +87,7 @@ export const FeaturedCaseStudy: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="group overflow-hidden rounded-[1.75rem] bg-surface/80 ring-1 ring-on-surface/5 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.1)] transition-all duration-300 hover:ring-on-surface/10 sm:rounded-[2rem]"
+              className="group overflow-hidden rounded-[1.75rem] bg-surface/80 ring-1 ring-on-surface/5 shadow-lg transition-all duration-300 hover:ring-on-surface/10 sm:rounded-[2rem]"
             >
               {/* Case Study Image */}
               <div className="relative h-48 overflow-hidden sm:h-64 md:h-72">

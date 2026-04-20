@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden rounded-2xl shadow-[0_24px_80px_-24px_rgba(0,0,0,0.6)] ring-1 ring-white/10 sm:rounded-[2rem]"
+          className="relative overflow-hidden rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.3)] ring-1 ring-white/10 sm:rounded-[2rem]"
         >
           {/* Cinematic image layer */}
           <div

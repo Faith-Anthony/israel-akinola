@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { blogPosts } from '../../data/blogData'
-import { FaArrowRight } from 'react-icons/fa6'
 
 export const BlogGridSection: React.FC = () => {
   const containerVariants = {
