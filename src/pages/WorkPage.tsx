@@ -8,7 +8,7 @@ import {
 
 export const WorkPage: React.FC = () => {
   return (
-    <div className="bg-surface text-on-surface">
+    <div>
       <WorkHeroSection />
       <FeaturedCaseStudies />
       <BrandsGridSection />

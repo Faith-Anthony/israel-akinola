@@ -120,7 +120,7 @@ export const ServicesGrid: React.FC = () => {
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group relative overflow-hidden rounded-2xl border border-white/[0.04] bg-surface-container/30 backdrop-blur-2xl transition-all duration-300 hover:border-white/[0.12] hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.5)]"
+                className="group relative overflow-hidden rounded-2xl border border-on-surface/5 bg-surface/50 backdrop-blur-2xl transition-all duration-300 hover:border-on-surface/10 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)]"
               >
                 {/* Ambient glow on hover */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary-container/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

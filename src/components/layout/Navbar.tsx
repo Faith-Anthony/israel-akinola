@@ -38,8 +38,8 @@ export const Navbar: React.FC = () => {
         <motion.nav
           className={`mx-auto overflow-hidden transition-all duration-300 ease-out ${
             scrolled
-              ? 'container-max rounded-2xl border border-white/10 bg-surface-container/60 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.4)] backdrop-blur-xl'
-              : 'w-full rounded-none border-b border-white/5 bg-surface/50 shadow-none backdrop-blur-md'
+              ? 'container-max rounded-2xl border border-on-surface/10 bg-surface/80 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)] backdrop-blur-xl'
+              : 'w-full rounded-none border-b border-on-surface/5 bg-app-background/50 shadow-none backdrop-blur-md'
           }`}
         >
           <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-6">

@@ -30,7 +30,7 @@ export const FeaturedCaseStudy: React.FC = () => {
           viewport={{ once: true, margin: '-100px' }}
           className="mx-auto max-w-4xl"
         >
-          <div className="group overflow-hidden rounded-[1.75rem] bg-surface-container/20 ring-1 ring-white/5 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.6)] transition-all duration-300 hover:ring-white/10 sm:rounded-[2rem]">
+          <div className="group overflow-hidden rounded-[1.75rem] bg-surface/80 ring-1 ring-on-surface/5 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.1)] transition-all duration-300 hover:ring-on-surface/10 sm:rounded-[2rem]">
             {/* Case Study Image */}
             <motion.div
               className="relative h-48 overflow-hidden sm:h-64 md:h-72"

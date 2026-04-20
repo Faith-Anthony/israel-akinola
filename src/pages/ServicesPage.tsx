@@ -10,7 +10,7 @@ import {
 
 export const ServicesPage: React.FC = () => {
   return (
-    <div className="bg-surface text-on-surface">
+    <div>
       <ServicesHeroSection />
       <ServicesGridSection />
       <ServicesBreakdownSection />

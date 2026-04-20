@@ -29,7 +29,7 @@ export const ClientsSection: React.FC = () => {
   const infiniteClients = [...clients, ...clients, ...clients]
 
   return (
-    <section className="overflow-hidden bg-surface-container-lowest py-8 sm:py-10 border-y border-white/5">
+    <section className="overflow-hidden bg-app-background py-8 sm:py-10 border-y border-on-surface/5">
       <div className="container-max mb-6 px-4 sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: -10 }}

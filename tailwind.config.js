@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,16 +7,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Premium Dark Theme palette
-        'surface': '#09090b',
-        'surface-dim': '#050506',
-        'surface-container-lowest': '#000000',
-        'surface-container-low': '#121214',
-        'surface-container': '#18181b',
-        'surface-container-high': '#202024',
-        'surface-container-highest': '#27272a',
-        'on-surface': '#fafafa',
-        'on-surface-variant': '#a1a1aa',
+        // Light Theme palette
+        'app-background': '#ffffff',
+        'on-app-background': '#09090b',
+        'surface': '#f8fafc',
+        'surface-dim': '#f1f5f9',
+        'surface-container-lowest': '#ffffff',
+        'surface-container-low': '#f8fafc',
+        'surface-container': '#f1f5f9',
+        'surface-container-high': '#e2e8f0',
+        'surface-container-highest': '#cbd5e1',
+        'on-surface': '#0f172a',
+        'on-surface-variant': '#64748b',
         'primary': '#ffb77d',
         'primary-container': '#d97706',
         'on-primary': '#4d2600',
@@ -43,7 +44,6 @@ const config: Config = {
         'error': '#ef4444',
         'error-container': '#7f1d1d',
         'on-error': '#fecaca',
-        'on-background': '#fafafa',
       },
       fontFamily: {
         'serif': ['Newsreader', 'serif'],
@@ -63,5 +63,3 @@ const config: Config = {
   darkMode: 'class',
   plugins: [],
 }
-
-export default config

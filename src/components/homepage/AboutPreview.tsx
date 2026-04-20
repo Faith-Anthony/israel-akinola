@@ -7,7 +7,7 @@ export const AboutPreview: React.FC = () => {
   return (
     <section className="bg-surface-dim py-6 sm:py-16">
       <div className="container-max px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-stretch gap-0 overflow-hidden rounded-3xl border border-white/[0.06] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.6)] md:grid-cols-2 md:rounded-[2rem]">
+        <div className="grid grid-cols-1 items-stretch gap-0 overflow-hidden rounded-3xl border border-on-surface/5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] md:grid-cols-2 md:rounded-[2rem]">
           
           {/* Profile Image — full height, no crop */}
           <motion.div
