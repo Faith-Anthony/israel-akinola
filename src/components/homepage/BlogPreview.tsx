@@ -30,7 +30,7 @@ const cardVariants = {
 
 export const BlogPreview: React.FC = () => {
   return (
-    <section className="bg-surface-container py-16 sm:py-20">
+    <section className="bg-surface-container py-12 sm:py-16 lg:py-20">
       <div className="container-max px-4 sm:px-6 lg:px-8">
         {/* Header with Explore Archive */}
         <motion.div
@@ -44,7 +44,7 @@ export const BlogPreview: React.FC = () => {
             <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.35em] text-on-surface-variant">
               Journal
             </p>
-            <h2 className="font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-on-surface sm:text-5xl">
+            <h2 className="font-display text-3xl font-semibold uppercase leading-[1.05] tracking-tight text-on-surface sm:text-4xl lg:text-5xl">
               Latest Insights
             </h2>
           </div>

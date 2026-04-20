@@ -48,17 +48,25 @@ const cardVariants = {
 
 export const FeaturedCaseStudies: React.FC = () => {
   return (
-    <section className="py-20 md:py-32">
-      <div className="container-max px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-20 bg-surface-dim/30 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-0">
+        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-primary-container/5 blur-[120px] rounded-full" />
+      </div>
+
+      <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: '-100px' }}
-          className="text-center mb-16 md:mb-24"
+          className="text-center mb-10 md:mb-16 lg:mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+          <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary-container mb-4">
+            Evidence of Excellence
+          </p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-on-surface">
             Featured Case Studies
           </h2>
         </motion.div>
@@ -69,51 +77,47 @@ export const FeaturedCaseStudies: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto"
         >
           {featuredProjects.map((project, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{
-                scale: 1.05,
-                borderColor: 'rgba(255, 140, 0, 0.5)',
-              }}
-              className="p-8 rounded-lg bg-surface border border-surface-container-high hover:border-primary-container/50 hover:shadow-lg transition-all duration-300 group flex flex-col"
+              className="glass-panel p-5 sm:p-7 md:p-10 rounded-[2rem] md:rounded-[2.5rem] group hover:border-primary-container/30 transition-smooth relative overflow-hidden flex flex-col"
             >
-              <motion.div
-                whileHover={{ scale: 1.05, y: -8 }}
-                className="mb-6 h-32 flex items-center justify-center"
-              >
-                <img
-                  src={project.logo}
-                  alt={project.title}
-                  className="h-full w-auto object-contain"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </motion.div>
-
-              {/* Title */}
-              <h3 className="text-xl md:text-2xl font-serif italic font-bold text-on-surface mb-3 leading-tight">
-                {project.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-lg text-on-surface-variant mb-8 flex-grow leading-relaxed">
-                {project.description}
-              </p>
-
-              {/* View Button */}
-              <Link to={project.link}>
-                <motion.button
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-6 py-2 border-2 border-primary-container text-primary-container font-semibold rounded-lg transition-all duration-300 hover:bg-primary-container hover:text-white"
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-container/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  className="mb-10 h-32 flex items-center justify-center p-6 bg-white rounded-[2rem] shadow-sm group-hover:shadow-md transition-all duration-500"
                 >
-                  View Case Study →
-                </motion.button>
-              </Link>
+                  <img
+                    src={project.logo}
+                    alt={project.title}
+                    className="h-full w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                    loading="lazy"
+                  />
+                </motion.div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-serif font-bold text-on-surface mb-4 leading-tight group-hover:text-primary-container transition-colors">
+                  {project.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-on-surface-variant text-lg font-light mb-10 flex-grow leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* View Link */}
+                <Link to={project.link} className="inline-flex items-center gap-3 group/link">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface group-hover/link:text-primary-container transition-colors">
+                    Explore Case Study
+                  </span>
+                  <div className="h-px w-8 bg-on-surface/20 group-hover/link:w-12 group-hover/link:bg-primary-container transition-all duration-300" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </motion.div>

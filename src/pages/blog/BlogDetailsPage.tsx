@@ -18,7 +18,7 @@ export const BlogDetailsPage: React.FC = () => {
           >
             <FaArrowLeft size={16} /> Back to Blog
           </Link>
-          <h1 className='text-4xl md:text-6xl font-display italic text-on-surface'>
+          <h1 className='text-4xl md:text-6xl font-display text-on-surface'>
             Post not found
           </h1>
         </div>
@@ -30,7 +30,7 @@ export const BlogDetailsPage: React.FC = () => {
     <>
       {/* Hero Section */}
       <motion.section
-        className='bg-surface-container py-20 md:py-32'
+        className='bg-surface-container pt-24 pb-12 md:pt-36 md:pb-24'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -55,7 +55,7 @@ export const BlogDetailsPage: React.FC = () => {
 
           {/* Title */}
           <motion.h1
-            className='text-4xl md:text-5xl lg:text-6xl font-display italic text-on-surface mb-6 leading-tight'
+            className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display text-on-surface mb-6 leading-tight'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -77,7 +77,7 @@ export const BlogDetailsPage: React.FC = () => {
 
       {/* Content Section */}
       <motion.section
-        className='bg-surface py-20 md:py-32'
+        className='bg-surface py-12 md:py-24 lg:py-32'
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: '-100px' }}
@@ -119,7 +119,7 @@ export const BlogDetailsPage: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h3 className='text-2xl md:text-3xl font-display italic text-on-surface mb-6'>
+            <h3 className='text-2xl md:text-3xl font-display text-on-surface mb-6'>
               Explore more insights
             </h3>
             <Link

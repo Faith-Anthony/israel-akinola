@@ -23,7 +23,7 @@ export const FinalCTA: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true, margin: '-100px' }}
-          className="mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-on-surface/5 bg-surface/80 p-8 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)] backdrop-blur-2xl sm:p-16 lg:p-20"
+          className="mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-on-surface/5 bg-surface/80 p-6 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)] backdrop-blur-2xl sm:rounded-[2.5rem] sm:p-12 lg:p-20"
         >
           <div className="relative z-20 text-center">
             <motion.h2

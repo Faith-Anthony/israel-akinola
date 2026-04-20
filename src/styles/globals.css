@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  /* Safe viewport height for mobile browsers (accounts for address bar) */
+  :root {
+    --vh-full: 100vh;
+  }
+  @supports (height: 100svh) {
+    :root {
+      --vh-full: 100svh;
+    }
+  }
+
   html {
     @apply scroll-smooth;
+    overflow-x: hidden;
   }
 
   html.custom-cursor-active,
@@ -20,7 +31,9 @@
   }
 
   body {
-    @apply min-h-screen bg-app-background font-sans text-on-app-background antialiased;
+    @apply min-h-screen bg-app-background font-serif text-on-app-background antialiased;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
     background-image: 
       radial-gradient(ellipse 100% 80% at 50% -30%, rgba(217, 119, 6, 0.04), transparent 55%),
       radial-gradient(ellipse 60% 40% at 100% 20%, rgba(99, 102, 241, 0.02), transparent 50%);
@@ -38,11 +51,22 @@
 @layer components {
   /* Utility classes for common patterns */
   .section-padding {
-    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+    @apply px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24;
   }
 
   .container-max {
     @apply max-w-7xl mx-auto;
+  }
+
+  /* Safe viewport height utility */
+  .h-screen-safe {
+    height: 100vh;
+    height: var(--vh-full, 100vh);
+  }
+
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: var(--vh-full, 100vh);
   }
 
   .text-display {
@@ -54,12 +78,12 @@
   }
 
   .text-body {
-    @apply font-sans text-body-lg leading-relaxed;
+    @apply font-serif text-body-lg leading-relaxed;
   }
 
   /* Responsive grid */
   .grid-responsive {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
   }
 
   /* Focus states for accessibility */
@@ -75,5 +99,19 @@
   /* Dark glassmorphism panel */
   .glass-panel {
     @apply border border-white/[0.06] bg-surface-container/40 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.4)] backdrop-blur-xl;
+  }
+
+  /* Sub-page hero — half height on mobile, full height on desktop */
+  .hero-page {
+    min-height: 50vh;
+    min-height: calc(var(--vh-full, 100vh) * 0.5);
+    @apply relative flex items-center overflow-hidden pt-16;
+  }
+
+  @media (min-width: 768px) {
+    .hero-page {
+      min-height: 100vh;
+      min-height: var(--vh-full, 100vh);
+    }
   }
 }

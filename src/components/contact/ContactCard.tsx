@@ -24,37 +24,33 @@ export const ContactCard: React.FC<ContactCardProps> = ({
       rel={isExternal ? 'noopener noreferrer' : ''}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: index * 0.1 }}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true, margin: '-100px' }}
-      whileHover={{ scale: 1.05 }}
-      className='group block'
+      className="group block"
     >
-      <motion.div
-        className='p-8 rounded-lg bg-surface-container border border-surface-container-high group-hover:border-primary-container/50 transition-all duration-300'
-        whileHover={{
-          boxShadow: '0 0 30px rgba(255, 140, 0, 0.1)',
-        }}
-      >
-        <div className='flex flex-col items-center text-center gap-6'>
-          <motion.div
-            whileHover={{ scale: 1.15, color: '#FF8C00' }}
-            className='text-4xl text-on-surface group-hover:text-primary-container transition-colors duration-300'
-          >
-            <Icon />
-          </motion.div>
+      <div className="glass-panel p-6 sm:p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden transition-smooth group-hover:border-primary-container/40">
+        {/* Ambient Glow */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-container/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        
+        <div className="relative z-10 flex flex-col items-center text-center gap-8">
+          <div className="h-16 w-16 rounded-2xl bg-on-surface/[0.03] group-hover:bg-primary-container/10 flex items-center justify-center transition-colors duration-500">
+            <Icon className="text-3xl text-on-surface/60 group-hover:text-primary-container transition-all duration-500 group-hover:scale-110" />
+          </div>
 
-          <h3 className='text-lg md:text-xl font-serif font-bold text-on-surface group-hover:text-primary-container transition-colors duration-300'>
-            {title}
-          </h3>
-
-          <motion.div
-            initial={{ width: 0 }}
-            whileHover={{ width: '100%' }}
-            transition={{ duration: 0.3 }}
-            className='h-0.5 bg-primary-container'
-          />
+          <div className="space-y-4">
+            <h3 className="text-sm sm:text-base md:text-xl lg:text-2xl font-serif font-bold text-on-surface leading-tight break-all">
+              {title}
+            </h3>
+            
+            <div className="flex items-center justify-center gap-3 group/link">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant group-hover:text-primary-container transition-colors">
+                Connect
+              </span>
+              <div className="h-px w-6 bg-on-surface/10 group-hover:w-10 group-hover:bg-primary-container transition-all duration-500" />
+            </div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </motion.a>
   )
 }

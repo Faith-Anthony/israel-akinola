@@ -42,7 +42,7 @@ export const NTPICCaseStudy: React.FC = () => {
             <motion.h1
               variants={fadeInUpVariants}
               transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold italic text-on-surface leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-on-surface leading-tight"
             >
               NTPIC
             </motion.h1>
@@ -50,7 +50,7 @@ export const NTPICCaseStudy: React.FC = () => {
             <motion.p
               variants={fadeInUpVariants}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl font-serif font-bold text-primary-container"
+              className="text-xl sm:text-3xl sm:text-4xl font-serif font-bold text-primary-container"
             >
               Driving National Tax Reform Strategy
             </motion.p>
@@ -68,7 +68,7 @@ export const NTPICCaseStudy: React.FC = () => {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-12 md:py-20">
         <div className="container-max max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -77,20 +77,19 @@ export const NTPICCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
               Overview
             </h2>
             <p className="text-xl text-on-surface-variant leading-relaxed">
-              The National Tax Policy Implementation Committee represents a strategic government
-              initiative to modernize and unify Nigeria's tax infrastructure, creating a more
-              transparent, inclusive, and digitally-enabled system.
+              Strategic implementation of national tax systems, optimizing institutional structures
+              for efficient policy delivery and compliance.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Challenge Section */}
-      <section className="py-20 md:py-32 bg-surface-container">
+      <section className="py-12 md:py-20 bg-surface-container">
         <div className="container-max max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,15 +98,15 @@ export const NTPICCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-10"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
               The Challenge
             </h2>
 
             <div className="space-y-6">
               {[
-                'Fragmented tax system across multiple agencies',
-                'Low public understanding of tax reform benefits',
-                'Exclusion of informal sector from formal structures',
+                'Inefficient tax collection frameworks',
+                'Low institutional trust and compliance',
+                'Need for modern, scalable policy delivery',
               ].map((challenge, index) => (
                 <motion.div
                   key={index}
@@ -126,8 +125,8 @@ export const NTPICCaseStudy: React.FC = () => {
         </div>
       </section>
 
-      {/* Strategy Section */}
-      <section className="py-20 md:py-32">
+      {/* Strategic Solutions Section */}
+      <section className="py-12 md:py-20">
         <div className="container-max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -136,17 +135,17 @@ export const NTPICCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-12"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
-              Strategy
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
+              Strategic Solutions
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                'Institutional branding and identity',
-                'Public communication strategy',
-                'Digital infrastructure planning',
-                'Stakeholder engagement framework',
-              ].map((strategy, index) => (
+                'Policy Architecture & Institutional Structuring',
+                'Compliance Framework Optimization',
+                'Stakeholder Engagement & Communication Strategy',
+                'Digital System Integration',
+              ].map((solution, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -156,7 +155,7 @@ export const NTPICCaseStudy: React.FC = () => {
                   className="p-6 rounded-lg bg-surface border border-surface-container-high hover:border-primary-container/30 transition-all duration-300"
                 >
                   <p className="text-xl font-serif font-bold text-on-surface leading-relaxed">
-                    {strategy}
+                    {solution}
                   </p>
                 </motion.div>
               ))}
@@ -166,7 +165,7 @@ export const NTPICCaseStudy: React.FC = () => {
       </section>
 
       {/* Execution Section */}
-      <section className="py-20 md:py-32 bg-surface-container">
+      <section className="py-12 md:py-20 bg-surface-container">
         <div className="container-max max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -175,16 +174,16 @@ export const NTPICCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-10"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
               Execution
             </h2>
 
             <div className="space-y-6">
               {[
-                'Built official brand identity and visual systems',
-                'Translated complex policy into simple messaging',
-                'Designed digital compliance and reporting systems',
-                'Led national engagement and awareness campaigns',
+                'Designed the national implementation roadmap',
+                'Orchestrated multi-level agency collaboration',
+                'Deployed compliance monitoring tools',
+                'Executed nationwide awareness programs',
               ].map((execution, index) => (
                 <motion.div
                   key={index}
@@ -206,7 +205,7 @@ export const NTPICCaseStudy: React.FC = () => {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-12 md:py-20">
         <div className="container-max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -215,15 +214,15 @@ export const NTPICCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-12"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-on-surface">
               Impact
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { number: 'Increased', label: 'Public Awareness & Buy-In' },
-                { number: 'Strengthened', label: 'Trust in Reforms' },
-                { number: 'Positioned', label: 'System for Scalability' },
+                { number: '20%', label: 'Revenue Growth' },
+                { number: 'Improved', label: 'Compliance Index' },
+                { number: 'Scalable', label: 'Framework Built' },
               ].map((impact, index) => (
                 <motion.div
                   key={index}
@@ -233,7 +232,7 @@ export const NTPICCaseStudy: React.FC = () => {
                   viewport={{ once: true }}
                   className="p-8 rounded-lg bg-surface border border-surface-container-high text-center"
                 >
-                  <p className="text-3xl font-serif font-bold text-primary-container mb-3">
+                  <p className="text-4xl md:text-5xl font-serif font-bold text-primary-container mb-3">
                     {impact.number}
                   </p>
                   <p className="text-lg text-on-surface-variant font-medium">{impact.label}</p>
@@ -245,7 +244,7 @@ export const NTPICCaseStudy: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-surface-container">
+      <section className="py-12 md:py-20 bg-surface-container">
         <div className="container-max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -254,7 +253,7 @@ export const NTPICCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="text-center space-y-8"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold italic text-on-surface leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-on-surface leading-tight">
               Building systems that shape nations.
             </h2>
 

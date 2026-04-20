@@ -7,11 +7,11 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#000000] text-on-surface/90">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         
         {/* Newsletter Section */}
-        <div className="mb-20 text-center">
-          <h2 className="mb-4 font-display text-5xl font-black uppercase tracking-tight text-white md:text-6xl lg:text-7xl">
+        <div className="mb-14 text-center sm:mb-20">
+          <h2 className="mb-4 font-display text-2xl font-black uppercase tracking-tight text-white sm:text-3xl md:text-6xl lg:text-7xl">
             NEWSLETTER
           </h2>
           <p className="mb-2 text-sm text-white">Israel also has a newsletter!</p>
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
           
           <div>
             <h3 className="mb-6 font-display text-xs font-black uppercase tracking-widest text-white">
-              SERVICES
+              EXPERTISE
             </h3>
             <ul className="space-y-4 text-sm text-white">
               <li><Link to="/services" className="hover:text-primary-container transition-colors">Strategy</Link></li>
@@ -95,13 +95,13 @@ export const Footer: React.FC = () => {
 
         {/* Massive Logo */}
         <div className="mb-8 flex justify-center">
-          <h1 className="font-display text-[18vw] font-black leading-none tracking-tighter text-[#fdf6e3]/40 lg:text-[14rem]">
+          <h1 className="font-display text-[13vw] font-black leading-none tracking-tighter text-[#fdf6e3]/40 sm:text-[15vw] lg:text-[14rem]">
             Akinola
           </h1>
         </div>
 
         {/* Legal Notices */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-[10px] text-white sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-[10px] text-white sm:flex-row sm:pt-8">
           <div className="max-w-2xl text-center sm:text-left">
             <p>© {currentYear} Israel Akinola. All rights reserved.</p>
             <p className="mt-1 text-white">

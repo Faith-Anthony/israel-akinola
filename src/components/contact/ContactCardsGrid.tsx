@@ -32,20 +32,21 @@ export const ContactCardsGrid: React.FC = () => {
   ]
 
   return (
-    <motion.section
-      className='bg-surface-container py-20 md:py-32'
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className='container mx-auto px-4 md:px-8 max-w-6xl'>
+    <section className="py-12 md:py-20 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/[0.03] blur-[150px] rounded-full" />
+        </div>
+      </div>
+
+      <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8">
         <motion.div
-          className='grid grid-cols-1 md:grid-cols-2 gap-8'
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto"
         >
           {contactOptions.map((option, index) => (
             <ContactCard
@@ -59,6 +60,6 @@ export const ContactCardsGrid: React.FC = () => {
           ))}
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   )
 }

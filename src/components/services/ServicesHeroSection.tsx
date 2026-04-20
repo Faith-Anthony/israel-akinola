@@ -1,60 +1,56 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import backgroundImage from '../../assets/images/hero_expertise.webp'
 
 const fadeInUpVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
 }
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
-  },
-}
-
 export const ServicesHeroSection: React.FC = () => {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-surface/50">
-      <div className="container-max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="text-center space-y-8"
-        >
-          {/* Main heading */}
-          <motion.h1
-            variants={fadeInUpVariants}
-            transition={{ duration: 0.9, ease: 'easeOut' }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold italic text-on-surface leading-tight"
-          >
-            Services
-          </motion.h1>
+    <section className="hero-page">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={backgroundImage}
+          alt=""
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-app-background via-app-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-app-background/40 via-transparent to-app-background" />
+      </div>
 
-          {/* Subheading */}
-          <motion.p
-            variants={fadeInUpVariants}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl font-serif font-bold text-primary-container"
+      <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="space-y-4"
           >
-            Strategy. Systems. Execution.
-          </motion.p>
-
-          {/* Intro text */}
-          <motion.p
-            variants={fadeInUpVariants}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed"
-          >
-            Designing and deploying high-impact solutions across strategy, policy, business, and
-            human systems.
-          </motion.p>
-        </motion.div>
+            <motion.p
+              variants={fadeInUpVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.8 }}
+              className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary-container"
+            >
+              What I Bring to the Table
+            </motion.p>
+            
+            <motion.h1
+              variants={fadeInUpVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-4xl sm:text-6xl lg:text-8xl font-serif font-bold leading-tight text-on-surface"
+            >
+              Here is my expertise.<br />
+              <span className="text-on-surface-variant font-light">This is what I do.</span>
+            </motion.h1>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -46,9 +46,10 @@ module.exports = {
         'on-error': '#fecaca',
       },
       fontFamily: {
-        'serif': ['Newsreader', 'serif'],
-        'sans': ['Manrope', 'sans-serif'],
-        'display': ['Oswald', 'system-ui', 'sans-serif'],
+        'serif': ['Cinzel', 'serif'],
+        'sans': ['Poppins', 'sans-serif'],
+        'display': ['Cinzel Decorative', 'serif'],
+        'engravers': ['Cinzel', 'serif'],
       },
       fontSize: {
         'display-lg': ['3.5rem', { lineHeight: '1.1', fontWeight: '700' }],

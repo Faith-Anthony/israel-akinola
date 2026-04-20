@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/layout'
 import { CustomCursor } from './components/common/CustomCursor'
 import { SplashScreen } from './components/common/SplashScreen'
+import { ScrollToTop } from './components/common/ScrollToTop'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
 import { ServicesPage } from './pages/ServicesPage'
@@ -35,6 +36,7 @@ function App() {
     <>
       <CustomCursor />
       <Router>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />

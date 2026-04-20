@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import profileImage from '../../assets/images/profile2.JPG'
+import profileImage from '../../assets/images/hero_about.webp'
 
 export const AboutPreview: React.FC = () => {
   return (

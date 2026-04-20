@@ -42,7 +42,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             <motion.h1
               variants={fadeInUpVariants}
               transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold italic text-on-surface leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-on-surface leading-tight"
             >
               Golearn
             </motion.h1>
@@ -50,7 +50,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             <motion.p
               variants={fadeInUpVariants}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl font-serif font-bold text-primary-container"
+              className="text-xl sm:text-3xl sm:text-4xl font-serif font-bold text-primary-container"
             >
               Scaling Financial Literacy Across Africa
             </motion.p>
@@ -67,7 +67,7 @@ export const GoLearnCaseStudy: React.FC = () => {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-12 md:py-20">
         <div className="container-max max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
               Overview
             </h2>
             <p className="text-xl text-on-surface-variant leading-relaxed">
@@ -89,7 +89,7 @@ export const GoLearnCaseStudy: React.FC = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-20 md:py-32 bg-surface-container">
+      <section className="py-12 md:py-20 bg-surface-container">
         <div className="container-max max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-10"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
               The Challenge
             </h2>
 
@@ -126,7 +126,7 @@ export const GoLearnCaseStudy: React.FC = () => {
       </section>
 
       {/* Strategic Solutions Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-12 md:py-20">
         <div className="container-max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -135,7 +135,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-12"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
               Strategic Solutions
             </h2>
 
@@ -165,7 +165,7 @@ export const GoLearnCaseStudy: React.FC = () => {
       </section>
 
       {/* Execution Section */}
-      <section className="py-20 md:py-32 bg-surface-container">
+      <section className="py-12 md:py-20 bg-surface-container">
         <div className="container-max max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -174,7 +174,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-10"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-2xl md:text-4xl font-serif font-bold text-on-surface">
               Execution
             </h2>
 
@@ -205,7 +205,7 @@ export const GoLearnCaseStudy: React.FC = () => {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 md:py-32">
+      <section className="py-12 md:py-20">
         <div className="container-max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -214,7 +214,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="space-y-12"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-on-surface">
               Impact
             </h2>
 
@@ -232,7 +232,7 @@ export const GoLearnCaseStudy: React.FC = () => {
                   viewport={{ once: true }}
                   className="p-8 rounded-lg bg-surface border border-surface-container-high text-center"
                 >
-                  <p className="text-5xl font-serif font-bold text-primary-container mb-3">
+                  <p className="text-4xl md:text-5xl font-serif font-bold text-primary-container mb-3">
                     {impact.number}
                   </p>
                   <p className="text-lg text-on-surface-variant font-medium">{impact.label}</p>
@@ -244,7 +244,7 @@ export const GoLearnCaseStudy: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-surface-container">
+      <section className="py-12 md:py-20 bg-surface-container">
         <div className="container-max max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -253,7 +253,7 @@ export const GoLearnCaseStudy: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             className="text-center space-y-8"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold italic text-on-surface leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-on-surface leading-tight">
               Building systems that empower people at scale.
             </h2>
 

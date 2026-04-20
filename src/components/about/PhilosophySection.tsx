@@ -9,7 +9,7 @@ const philosophyStatements = [
 
 export const PhilosophySection: React.FC = () => {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-12 md:py-20 bg-surface-dim/30">
       <div className="container-max px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.div
@@ -17,15 +17,18 @@ export const PhilosophySection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: '-100px' }}
-          className="text-center mb-16 md:mb-24"
+          className="text-center mb-10 md:mb-16 lg:mb-24"
         >
-          <h2 className="text-5xl md:text-6xl font-serif font-bold italic text-on-surface">
+          <p className="text-[10px] font-bold tracking-[0.4em] text-primary-container mb-4">
+            Foundational truths
+          </p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-on-surface">
             Philosophy
           </h2>
         </motion.div>
 
-        {/* Philosophy Statements */}
-        <div className="space-y-12 md:space-y-16 max-w-5xl mx-auto">
+        {/* Philosophy Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {philosophyStatements.map((statement, index) => (
             <motion.div
               key={index}
@@ -33,35 +36,18 @@ export const PhilosophySection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true, margin: '-100px' }}
-              className={`${
-                index % 2 === 0 ? 'md:text-left md:pr-12' : 'md:text-right md:pl-12'
-              }`}
+              className="glass-panel p-6 sm:p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] flex flex-col justify-between group hover:border-primary-container/30 transition-smooth"
             >
-              <div
-                className={`${
-                  index === 1 ? 'md:flex md:justify-end' : ''
-                }`}
-              >
-                <div
-                  className={`${
-                    index === 1 ? 'max-w-2xl' : ''
-                  }`}
-                >
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold italic text-on-surface leading-tight">
-                    {statement}
-                  </p>
-                  {/* Accent line */}
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '60px' }}
-                    transition={{ duration: 0.8, delay: index * 0.2 + 0.3 }}
-                    viewport={{ once: true }}
-                    className={`h-1 bg-primary-container mt-6 ${
-                      index % 2 === 0 ? '' : 'md:ml-auto'
-                    }`}
-                  />
+              <div>
+                <div className="mb-8 text-primary-container/20 group-hover:text-primary-container/40 transition-colors">
+                  <span className="text-6xl font-serif leading-none">0{index + 1}</span>
                 </div>
+                <p className="text-xl sm:text-2xl font-serif font-bold text-on-surface leading-tight">
+                  {statement}
+                </p>
               </div>
+              
+              <div className="mt-8 h-1 w-12 bg-primary-container/40 group-hover:w-20 transition-all duration-500" />
             </motion.div>
           ))}
         </div>

@@ -29,60 +29,68 @@ export const BlogGridSection: React.FC = () => {
   }
 
   return (
-    <motion.section
-      className='bg-surface-container py-20 md:py-32'
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className='container mx-auto px-4 md:px-8 max-w-6xl'>
+    <section className="py-12 md:py-20 bg-surface-dim/30 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary-container/5 blur-[120px] rounded-full" />
+      </div>
+
+      <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8">
         <motion.div
-          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
           variants={containerVariants}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto"
         >
           {blogPosts.map((post) => (
             <motion.div
               key={post.id}
               variants={itemVariants}
-              className='bg-surface border border-surface-container-high/50 p-6 md:p-8 hover:border-primary-container/50 transition-all duration-300'
+              className="glass-panel p-6 md:p-8 rounded-[1.75rem] md:rounded-[2.5rem] group hover:border-primary-container/30 transition-smooth relative overflow-hidden flex flex-col"
             >
-              {/* Category Badge */}
-              {post.category && (
-                <div className='inline-block mb-4'>
-                  <span className='text-xs font-semibold text-primary-container uppercase tracking-wider'>
-                    {post.category}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-container/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Meta Header */}
+                <div className="flex items-center justify-between mb-6">
+                  {post.category && (
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary-container">
+                      {post.category}
+                    </span>
+                  )}
+                  <span className="text-[10px] font-medium uppercase tracking-[0.1em] text-on-surface-variant">
+                    {post.date}
                   </span>
                 </div>
-              )}
 
-              {/* Title */}
-              <Link to={`/blog/${post.slug}`}>
-                <h3 className='text-xl md:text-2xl font-display italic text-on-surface mb-3 leading-tight hover:text-primary-container transition-colors duration-300'>
-                  {post.title}
-                </h3>
-              </Link>
+                {/* Title */}
+                <Link to={`/blog/${post.slug}`}>
+                  <h3 className="text-xl md:text-2xl font-serif font-bold text-on-surface mb-4 leading-tight group-hover:text-primary-container transition-colors">
+                    {post.title}
+                  </h3>
+                </Link>
 
-              {/* Date */}
-              <p className='text-sm text-on-surface-variant mb-4'>{post.date}</p>
+                {/* Excerpt */}
+                <p className="text-on-surface-variant text-lg font-light leading-relaxed mb-8 flex-grow">
+                  {post.excerpt}
+                </p>
 
-              {/* Excerpt */}
-              <p className='text-on-surface-variant leading-relaxed mb-6'>{post.excerpt}</p>
-
-              {/* Read More Link */}
-              <Link
-                to={`/blog/${post.slug}`}
-                className='inline-flex items-center gap-2 text-primary-container font-semibold hover:gap-3 transition-all duration-300'
-              >
-                Read More <FaArrowRight size={16} />
-              </Link>
+                {/* Read More Link */}
+                <Link 
+                  to={`/blog/${post.slug}`}
+                  className="inline-flex items-center gap-3 group/link mt-auto"
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface group-hover/link:text-primary-container transition-colors">
+                    Read Article
+                  </span>
+                  <div className="h-px w-8 bg-on-surface/20 group-hover/link:w-12 group-hover/link:bg-primary-container transition-all duration-300" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   )
 }

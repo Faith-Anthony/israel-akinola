@@ -46,8 +46,13 @@ const logoVariants = {
 
 export const BrandsGridSection: React.FC = () => {
   return (
-    <section className="py-20 md:py-32 bg-surface-container">
-      <div className="container-max px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-20 relative overflow-hidden">
+      {/* Ambient backgrounds */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary-container/5 blur-[150px] rounded-full" />
+      </div>
+
+      <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,10 +61,13 @@ export const BrandsGridSection: React.FC = () => {
           viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold italic text-on-surface mb-6">
-            Organizations & Brands Worked With
+          <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary-container mb-4">
+            A Network of Impact
+          </p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-on-surface mb-6">
+            Organizations & Brands
           </h2>
-          <p className="text-lg text-on-surface-variant max-w-2xl mx-auto">
+          <p className="text-lg text-on-surface-variant max-w-2xl mx-auto font-light">
             Collaborating with institutions, startups, and national systems to drive meaningful impact.
           </p>
         </motion.div>
@@ -70,21 +78,21 @@ export const BrandsGridSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 md:gap-10 max-w-7xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-7xl mx-auto"
         >
           {brands.map((brand, index) => (
             <motion.div
               key={index}
               variants={logoVariants}
-              whileHover={{ scale: 1.08, y: -5 }}
-              className="flex items-center justify-center p-6 rounded-lg bg-surface/20 border border-surface-container-high/30 hover:border-primary-container/30 transition-all duration-300 group aspect-square"
+              className="glass-panel p-6 sm:p-8 rounded-[1.5rem] md:rounded-[2rem] group hover:border-primary-container/30 transition-smooth relative overflow-hidden aspect-square flex items-center justify-center bg-white/40"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-container/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="h-24 w-auto max-w-full object-contain hover:brightness-110 transition-all duration-300"
+                className="h-24 w-auto max-w-full object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500 relative z-10"
                 loading="lazy"
-                decoding="async"
               />
             </motion.div>
           ))}

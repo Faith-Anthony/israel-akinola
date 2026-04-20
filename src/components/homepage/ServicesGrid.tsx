@@ -77,7 +77,7 @@ const TypewriterText = ({ text }: { text: string }) => {
 }
 
 export const ServicesGrid: React.FC = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
     <section className="bg-surface-container-lowest py-8 sm:py-20">
@@ -92,7 +92,7 @@ export const ServicesGrid: React.FC = () => {
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.35em] text-on-surface-variant">
             Expertise
           </p>
-          <h2 className="font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight text-on-surface sm:text-5xl">
+          <h2 className="font-display text-3xl font-semibold uppercase leading-[1.05] tracking-tight text-on-surface sm:text-4xl lg:text-5xl">
             The Strategic Framework
           </h2>
           <div className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-on-surface-variant sm:text-base">
@@ -109,7 +109,7 @@ export const ServicesGrid: React.FC = () => {
           className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service, index) => {
-            const isOpen = hoveredIndex === index
+            const isOpen = activeIndex === index
             return (
               <motion.div
                 key={index}
@@ -118,9 +118,10 @@ export const ServicesGrid: React.FC = () => {
                   visible: { opacity: 1, y: 0, scale: 1 },
                 }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className="group relative overflow-hidden rounded-2xl border border-on-surface/5 bg-surface/50 backdrop-blur-2xl transition-all duration-300 hover:border-on-surface/10 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)]"
+                onMouseEnter={() => setActiveIndex(index)}
+                onMouseLeave={() => setActiveIndex(null)}
+                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-on-surface/5 bg-surface/50 backdrop-blur-2xl transition-all duration-300 hover:border-on-surface/10 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)]"
               >
                 {/* Ambient glow on hover */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary-container/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

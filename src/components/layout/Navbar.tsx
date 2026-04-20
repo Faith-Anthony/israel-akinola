@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import brandLogo from '@brand-logo'
 
 export const Navbar: React.FC = () => {
@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
   const menuItems = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
-    { label: 'Services', path: '/services' },
+    { label: 'Expertise', path: '/services' },
     { label: 'Work', path: '/work' },
     { label: 'Blog', path: '/blog' },
     { label: 'Contact', path: '/contact' },
@@ -31,15 +31,15 @@ export const Navbar: React.FC = () => {
 
       {/* Glass nav — flows down from the roof on scroll */}
       <div
-        className={`transition-[padding,border-radius] duration-300 ease-out sm:px-4 lg:px-8 ${
-          scrolled ? 'pt-4 pb-2 px-3' : 'p-0 w-full max-w-none'
+        className={`transition-[padding,border-radius] duration-300 ease-out ${
+          scrolled ? 'pt-4 pb-2 px-3 sm:px-4 lg:px-8' : 'p-0 w-full max-w-none'
         }`}
       >
         <motion.nav
           className={`mx-auto overflow-hidden transition-all duration-300 ease-out ${
             scrolled
-              ? 'container-max rounded-2xl border border-on-surface/10 bg-surface/80 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)] backdrop-blur-xl'
-              : 'w-full rounded-none border-b border-on-surface/5 bg-app-background/50 shadow-none backdrop-blur-md'
+              ? 'container-max rounded-2xl border border-on-surface/10 bg-surface shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)]'
+              : 'w-full rounded-none border-b border-on-surface/5 bg-app-background shadow-none'
           }`}
         >
           <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
@@ -93,31 +93,41 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {isOpen && (
-            <div className="border-t border-on-surface/10 px-4 py-4 lg:hidden">
-              <div className="flex flex-col gap-1">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className="rounded-xl px-3 py-3 text-sm font-semibold uppercase tracking-wider text-on-surface/85 hover:bg-white/[0.06]"
-                    onClick={() => setIsOpen(false)}
-                    data-cursor-hover
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <Link
-                  to="/contact"
-                  className="mt-2 rounded-xl bg-on-surface px-4 py-3 text-center text-sm font-semibold uppercase tracking-wider text-surface"
-                  onClick={() => setIsOpen(false)}
-                  data-cursor-hover
-                >
-                  Let&apos;s Talk
-                </Link>
-              </div>
-            </div>
-          )}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden border-t border-on-surface/10 lg:hidden"
+              >
+                <div className="px-4 py-4">
+                  <div className="flex flex-col gap-1">
+                    {menuItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="rounded-xl px-3 py-3.5 text-sm font-semibold uppercase tracking-wider text-on-surface/85 hover:bg-white/[0.06] active:bg-white/[0.1]"
+                        onClick={() => setIsOpen(false)}
+                        data-cursor-hover
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                    <Link
+                      to="/contact"
+                      className="mt-2 rounded-xl bg-primary-container px-4 py-3.5 text-center text-sm font-semibold uppercase tracking-wider text-on-primary"
+                      onClick={() => setIsOpen(false)}
+                      data-cursor-hover
+                    >
+                      Let&apos;s Talk
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.nav>
       </div>
     </header>

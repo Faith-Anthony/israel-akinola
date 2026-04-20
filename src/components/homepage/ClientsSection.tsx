@@ -49,7 +49,7 @@ export const ClientsSection: React.FC = () => {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-surface to-transparent sm:w-32" />
 
         <motion.div
-          className="flex gap-12 md:gap-16"
+          className="flex gap-8 md:gap-12 lg:gap-16"
           animate={{ x: [0, -2000] }}
           transition={{
             duration: 40,
@@ -61,7 +61,7 @@ export const ClientsSection: React.FC = () => {
           {infiniteClients.map((client, index) => (
             <motion.div
               key={index}
-              className="flex h-16 w-32 shrink-0 items-center justify-center sm:h-20 sm:w-40"
+              className="flex h-12 w-24 shrink-0 items-center justify-center sm:h-16 sm:w-32 md:h-20 md:w-40"
               whileHover={{ scale: 1.05 }}
             >
               <img
